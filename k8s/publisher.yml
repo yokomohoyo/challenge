@@ -1,0 +1,15 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: publisher
+spec:
+  template:
+    metadata:
+      name: challenge-publisher-pod
+    spec:
+      containers:
+      - name: publisher
+        image: cabro.org/publisher:latest
+        imagePullPolicy: Never
+      restartPolicy: Never

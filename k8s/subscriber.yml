@@ -1,0 +1,15 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: subscriber
+spec:
+  template:
+    metadata:
+      name: challenge-subscriber-pod
+    spec:
+      containers:
+      - name: subscriber
+        image: cabro.org/subscriber:latest
+        imagePullPolicy: Never
+      restartPolicy: Never
