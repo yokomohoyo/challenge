@@ -1,0 +1,15 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: consumer
+spec:
+  template:
+    metadata:
+      name: challenge-consumer-pod
+    spec:
+      containers:
+      - name: consumer
+        image: cabro.org/consumer:latest
+        imagePullPolicy: Never
+      restartPolicy: Never
